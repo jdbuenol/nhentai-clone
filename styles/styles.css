@@ -5,3 +5,22 @@ body{
 .pageInfo{
     color: white;
 }
+
+.grid-popular{
+    background-color: #343a40;
+    width: 1150px;
+    height: 290px;
+}
+
+.hentai-card{
+    font-size: small;
+    width: 12rem;
+    height: 16rem;
+    overflow-y: hidden;
+    color: white;
+}
+
+.hentai-card:hover{
+    overflow-y: visible;
+    height: auto;
+}

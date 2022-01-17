@@ -10,8 +10,10 @@ app.use(express.static(path.join(__dirname, "styles")));
 app.use(express.static(path.join(__dirname, "assets")));
 app.set("view engine", "ejs");
 
-app.get('/', (req, res) => {
-  res.render("index");
+app.get('/', async (req, res) => {
+  let popularDoujins = await doujins.getPopular();
+  let popularString = await JSON.stringify(popularDoujins);
+  res.render("index", {popular : popularString});
 })
 
 app.get('/random', (req, res) => {
@@ -52,5 +54,5 @@ app.get('/g/:sauce/:page', async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://127.0.0.1:${port}`);
 })
