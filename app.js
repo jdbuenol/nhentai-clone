@@ -3,7 +3,7 @@ const path = require("path");
 const doujins = new nHentai;
 const express = require('express');
 const app = express();
-const port = 5500;
+const port = 443;
 
 app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "styles")));
